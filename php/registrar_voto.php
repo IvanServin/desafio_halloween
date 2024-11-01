@@ -1,5 +1,5 @@
 <?php
-session_start(); // Asegúrate de que la sesión esté iniciada
+session_start(); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $con = mysqli_connect("localhost", "root", "", "halloween");
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($con) {
         $disfrazId = intval($_POST['disfraz_id']);
-        $usuarioId = $_SESSION['id_usuario']; // Asumiendo que el ID del usuario está en la sesión
+        $usuarioId = $_SESSION['id_usuario']; 
 
         // Verificar si el usuario ya ha votado
         $checkSql = "SELECT * FROM votos WHERE id_usuario = $usuarioId AND id_disfraz = $disfrazId";
